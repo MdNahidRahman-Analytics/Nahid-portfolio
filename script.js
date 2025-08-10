@@ -1,4 +1,3 @@
-script.js                                                            
 // open welcome modal once per visit
 const modal = document.getElementById('welcomeModal');
 const startBtn = document.getElementById('startBtn');
