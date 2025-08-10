@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Md Nahid Rahman — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated gradient background -->
+  <div class="bg"></div>
+
+  <header class="site-header" role="banner">
+    <h1 class="logo">Md Nahid Rahman</h1>
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="#sections">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Welcome modal -->
+  <div class="modal-backdrop" id="welcomeModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="welcomeTitle" aria-modal="true">
+      <h2 id="welcomeTitle">Welcome to my portfolio</h2>
+      <p>I'm an Information Systems & Business Analytics student focused on data analysis, forecasting, and dashboards.</p>
+      <button id="startBtn" class="btn">Enter</button>
+    </div>
+  </div>
+
+  <main id="sections">
+    <section class="intro">
+      <p class="tag">Portfolio</p>
+      <h2>Projects & experience</h2>
+      <p>Explore my academic projects, internship work, certifications, leadership, and resume.</p>
+    </section>
+
+    <!-- Category cards -->
+    <section class="grid">
+      <article class="card" data-target="academic">
+        <h3>Academic Projects</h3>
+        <p>Big Data Health Analytics; U.S. Air Quality & Pollution Analysis</p>
+      </article>
+
+      <article class="card" data-target="intern">
+        <h3>Data & Business Analyst Intern</h3>
+        <p>Pricing, forecasting, SQL, dashboards (Americas Best Value Inn)</p>
+      </article>
+
+      <article class="card" data-target="certs">
+        <h3>Certifications</h3>
+        <p>PL-300, SQL, Tableau, Power BI, + more (in progress/earned)</p>
+      </article>
+
+      <article class="card" data-target="leadership">
+        <h3>Leadership</h3>
+        <p>Secretary, Bangladeshi Student Organization — ASU</p>
+      </article>
+
+      <article class="card" data-target="resume">
+        <h3>Resume</h3>
+        <p>Download the latest PDF</p>
+      </article>
+    </section>
+
+    <!-- Panels (shown on click) -->
+    <section id="panel-academic" class="panel" aria-labelledby="panel-academic-title">
+      <div class="panel-header">
+        <h3 id="panel-academic-title">Academic Projects</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <ul class="items">
+        <li>
+          <h4>Big Data Health Analytics Project</h4>
+          <p>Global Cancer (Kaggle), U.S. Health (CDC) — regression, clustering, multivariate visuals in Tableau & SAS Viya.</p>
+          <a class="btn link" href="https://github.com/USERNAME/REPO_OR_FOLDER_1" target="_blank" rel="noopener">View project</a>
+        </li>
+        <li>
+          <h4>U.S. Air Quality & Pollution Analysis</h4>
+          <p>EPA 2023 data — AQI trends, pollutant patterns, state/county differences; notebooks + Tableau dashboards.</p>
+          <a class="btn link" href="https://github.com/USERNAME/REPO_OR_FOLDER_2" target="_blank" rel="noopener">View project</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="panel-intern" class="panel" aria-labelledby="panel-intern-title">
+      <div class="panel-header">
+        <h3 id="panel-intern-title">Data & Business Analyst Intern</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <ul class="items">
+        <li>
+          <h4>Americas Best Value Inn — Internship Highlights</h4>
+          <ul>
+            <li>Built SQL queries, cleaned booking data, and automated reports.</li>
+            <li>Forecasted demand (XGBoost/Prophet) to support pricing & staffing.</li>
+            <li>Delivered Tableau/Power BI dashboards for operations and revenue.</li>
+          </ul>
+          <a class="btn link" href="https://github.com/USERNAME/REPO_OR_FOLDER_INTERNSHIP" target="_blank" rel="noopener">See artifacts</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="panel-certs" class="panel" aria-labelledby="panel-certs-title">
+      <div class="panel-header">
+        <h3 id="panel-certs-title">Certifications</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <ul class="items">
+        <li><strong>Microsoft PL‑300 (Power BI Data Analyst)</strong> — planned/earned (add date)</li>
+        <li><strong>Tableau Desktop Specialist</strong> — planned/earned (add date)</li>
+        <li><strong>SQL (HackerRank/Datacamp)</strong> — add credential link</li>
+      </ul>
+    </section>
+
+    <section id="panel-leadership" class="panel" aria-labelledby="panel-leadership-title">
+      <div class="panel-header">
+        <h3 id="panel-leadership-title">Leadership</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <p>Secretary, Bangladeshi Student Organization (ASU). Led ops/data tracking to boost engagement and streamline comms.</p>
+    </section>
+
+    <section id="panel-resume" class="panel" aria-labelledby="panel-resume-title">
+      <div class="panel-header">
+        <h3 id="panel-resume-title">Resume</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <p>Download my latest resume:</p>
+      <a class="btn" href="resume/Nahid_Rahman_Resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p><a href="mailto:rahmanmdnahid815@gmail.com">rahmanmdnahid815@gmail.com</a> • <a href="https://www.linkedin.com/in/md-nahid-rahman" target="_blank" rel="noopener">LinkedIn</a> • <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Md Nahid Rahman • Built with HTML/CSS/JS</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
