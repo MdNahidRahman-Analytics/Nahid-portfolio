@@ -1,4 +1,4 @@
-<!doctype html>
+index html: <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -38,67 +38,44 @@
       <p>Explore my academic projects, internship work, certifications, leadership, and resume.</p>
     </section>
 
-    <!-- Category cards -->
-    <section class="grid">
-      <article class="card" data-target="about">
-        <h3>About Me</h3>
-      </article>
+<!-- Category cards -->
+<section class="grid">
+  <article class="card" data-target="about">
+    <h3>About Me</h3>
+  </article>
 
-      <article class="card" data-target="resume">
-        <h3>Resume</h3>
-      </article>
+  <article class="card" data-target="resume">
+    <h3>Resume</h3>
+  </article>
 
-      <article class="card" data-target="academic">
-        <h3>Academic Projects</h3>
-      </article>
+  <article class="card" data-target="academic">
+    <h3>Academic Projects</h3>
+  </article>
 
-      <article class="card" data-target="intern">
-        <h3>Data & Business Analyst Intern</h3>
-      </article>
+  <article class="card" data-target="intern">
+    <h3>Data & Business Analyst Intern</h3>
+  </article>
 
-      <article class="card" data-target="certs">
-        <h3>Certifications</h3>
-      </article>
+  <article class="card" data-target="certs">
+    <h3>Certifications</h3>
+  </article>
 
-      <article class="card" data-target="publication">
-        <h3>Publication</h3>
-      </article>
+  <article class="card" data-target="certs">
+    <h3>Publication</h3>
+  </article>
 
-      <article class="card" data-target="leadership">
-        <h3>Leadership</h3>
-      </article>
+  <article class="card" data-target="leadership">
+    <h3>Leadership</h3>
+  </article>
 
-      <article class="card" data-target="travel">
-        <h3>Travel Blog</h3>
-      </article>
-    </section>
+  <article class="card" data-target="travel">
+    <h3>Travel Blog</h3>
+  </article>
+</section>
+
+
 
     <!-- Panels (shown on click) -->
-    <!-- About Me -->
-    <section id="panel-about" class="panel" aria-labelledby="panel-about-title">
-      <div class="panel-header">
-        <h3 id="panel-about-title">About Me</h3>
-        <button class="close-panel" data-close>&times;</button>
-      </div>
-
-      <div class="about">
-        <!-- Put your image at assets/img/nahid.jpg -->
-        <img src="assets/img/nahid.jpg" alt="Md Nahid Rahman portrait">
-        <div>
-          <p>Hi, I’m Md Nahid Rahman — an Information Systems & Business Analytics student focused on data analysis, dashboards, and forecasting to improve business decisions.</p>
-          <ul>
-            <li><strong>Skills:</strong> SQL, Python (Pandas), Excel, Tableau, Power BI, SAS Viya</li>
-            <li><strong>Focus:</strong> Revenue analytics, demand forecasting (XGBoost/Prophet), A/B testing</li>
-            <li><strong>Location:</strong> Jonesboro, AR</li>
-          </ul>
-          <p>
-            <a class="btn link" href="https://www.linkedin.com/in/md-nahid-rahman" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn link" href="https://github.com/MdNahidRahman-Analytics" target="_blank" rel="noopener">GitHub</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
     <section id="panel-academic" class="panel" aria-labelledby="panel-academic-title">
       <div class="panel-header">
         <h3 id="panel-academic-title">Academic Projects</h3>
@@ -142,26 +119,10 @@
         <button class="close-panel" data-close>&times;</button>
       </div>
       <ul class="items">
-        <li><strong>Microsoft PL-300 (Power BI Data Analyst)</strong> — planned/earned (add date)</li>
+        <li><strong>Microsoft PL‑300 (Power BI Data Analyst)</strong> — planned/earned (add date)</li>
         <li><strong>Tableau Desktop Specialist</strong> — planned/earned (add date)</li>
         <li><strong>SQL (HackerRank/Datacamp)</strong> — add credential link</li>
       </ul>
-    </section>
-
-    <!-- Resume with inline PDF preview -->
-    <section id="panel-resume" class="panel" aria-labelledby="panel-resume-title">
-      <div class="panel-header">
-        <h3 id="panel-resume-title">Resume</h3>
-        <button class="close-panel" data-close>&times;</button>
-      </div>
-
-      <p>
-        <a class="btn" href="resume/Nahid_Rahman_Resume.pdf" target="_blank" rel="noopener">Download PDF</a>
-      </p>
-
-      <div class="pdf-frame">
-        <iframe src="resume/Nahid_Rahman_Resume.pdf" title="Resume PDF"></iframe>
-      </div>
     </section>
 
     <section id="panel-leadership" class="panel" aria-labelledby="panel-leadership-title">
@@ -172,13 +133,18 @@
       <p>Secretary, Bangladeshi Student Organization (ASU). Led ops/data tracking to boost engagement and streamline comms.</p>
     </section>
 
+    <section id="panel-resume" class="panel" aria-labelledby="panel-resume-title">
+      <div class="panel-header">
+        <h3 id="panel-resume-title">Resume</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <p>Download my latest resume:</p>
+      <a class="btn" href="resume/Nahid_Rahman_Resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+    </section>
+
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>
-        <a href="mailto:rahmanmdnahid815@gmail.com">rahmanmdnahid815@gmail.com</a> •
-        <a href="https://www.linkedin.com/in/md-nahid-rahman" target="_blank" rel="noopener">LinkedIn</a> •
-        <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
-      </p>
+      <p><a href="mailto:rahmanmdnahid815@gmail.com">rahmanmdnahid815@gmail.com</a> • <a href="https://www.linkedin.com/in/md-nahid-rahman" target="_blank" rel="noopener">LinkedIn</a> • <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a></p>
     </section>
   </main>
 
