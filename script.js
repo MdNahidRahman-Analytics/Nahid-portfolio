@@ -1,17 +1,35 @@
-// open welcome modal once per visit
+// ===== Welcome Modal (Shows once per session) =====
 const modal = document.getElementById('welcomeModal');
 const startBtn = document.getElementById('startBtn');
 const seen = sessionStorage.getItem('seenWelcome');
-function openModal(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
-function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
 
-if(!seen){ openModal(); }
-startBtn?.addEventListener('click', () => { sessionStorage.setItem('seenWelcome','1'); closeModal(); });
+function openModal() {
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+}
 
-// open/close panels from cards
+function closeModal() {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+if (!seen) {
+  openModal();
+}
+
+startBtn?.addEventListener('click', () => {
+  sessionStorage.setItem('seenWelcome', '1');
+  closeModal();
+});
+
+
+// ===== Panels (Cards that open details) =====
 const cards = document.querySelectorAll('.card');
 const closeBtns = document.querySelectorAll('[data-close]');
+
+// ✅ Added missing 'about' panel here
 const panels = {
+  about: document.getElementById('panel-about'),
   academic: document.getElementById('panel-academic'),
   intern: document.getElementById('panel-intern'),
   certs: document.getElementById('panel-certs'),
@@ -19,23 +37,30 @@ const panels = {
   resume: document.getElementById('panel-resume'),
 };
 
-cards.forEach(card=>{
+// ===== Open selected panel when card is clicked =====
+cards.forEach(card => {
   card.addEventListener('click', () => {
     const key = card.getAttribute('data-target');
-    // close any open panel
-    Object.values(panels).forEach(p => p.classList.remove('open'));
-    // open selected
+
+    // Close any currently open panel
+    Object.values(panels).forEach(p => p?.classList.remove('open'));
+
+    // Open the selected panel
     const panel = panels[key];
-    if(panel){ panel.classList.add('open'); panel.scrollIntoView({behavior:'smooth', block:'start'}); }
+    if (panel) {
+      panel.classList.add('open');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 });
 
-closeBtns.forEach(btn=>{
-  btn.addEventListener('click', (e)=>{
+// ===== Close button inside panels =====
+closeBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
     const panel = e.target.closest('.panel');
     panel?.classList.remove('open');
   });
 });
 
-// footer year
+// ===== Footer Year (Auto-updates) =====
 document.getElementById('year').textContent = new Date().getFullYear();
