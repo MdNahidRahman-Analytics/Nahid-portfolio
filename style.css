@@ -1,45 +1,71 @@
-:root{
+/* ===========================================
+   Root Variables
+=========================================== */
+:root {
   --radius:16px;
   --shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-/* animated gradient background */
-.bg{
+/* ===========================================
+   Animated Gradient Background
+=========================================== */
+.bg {
   position:fixed; inset:0;
   background: linear-gradient(-45deg, #6a5cff, #36d1dc, #ff7eb3, #ffd36e);
   background-size: 400% 400%;
   animation: gradient 18s ease infinite;
   z-index:-1;
 }
-@keyframes gradient{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+@keyframes gradient {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
 }
 
-*{box-sizing:border-box}
-html,body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#0f172a}
-a{color:inherit}
+/* ===========================================
+   Base Styles
+=========================================== */
+* {box-sizing:border-box}
+html,body {
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:#0f172a;
+}
+a {color:inherit}
 
-.site-header{
+/* ===========================================
+   Header
+=========================================== */
+.site-header {
   display:flex; justify-content:space-between; align-items:center;
   padding:18px 22px;
   backdrop-filter: blur(8px);
 }
-.logo{font-size:1.2rem; font-weight:700}
-.nav{list-style:none; display:flex; gap:16px; margin:0; padding:0}
-.nav a{padding:8px 12px; border-radius:10px; text-decoration:none; background:rgba(255,255,255,.5)}
+.logo {font-size:1.2rem; font-weight:700}
+.nav {list-style:none; display:flex; gap:16px; margin:0; padding:0}
+.nav a {padding:8px 12px; border-radius:10px; text-decoration:none; background:rgba(255,255,255,.5)}
 
-.intro{max-width:900px; margin:60px auto 20px; text-align:center; padding:0 16px}
-.tag{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.6); font-weight:600}
-.intro h2{font-size:2.2rem; margin:10px 0 6px}
-.intro p{opacity:.9}
+/* ===========================================
+   Introduction Section
+=========================================== */
+.intro {
+  max-width:900px; margin:60px auto 20px; text-align:center; padding:0 16px
+}
+.tag {
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background:rgba(255,255,255,.6); font-weight:600
+}
+.intro h2 {font-size:2.2rem; margin:10px 0 6px}
+.intro p {opacity:.9}
 
-.grid{
+/* ===========================================
+   Cards / Grid Layout
+=========================================== */
+.grid {
   max-width:1100px; margin:24px auto 50px; padding:0 16px;
   display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:18px;
 }
-.card{
+.card {
   background:rgba(255,255,255,.75);
   border-radius:var(--radius);
   padding:18px;
@@ -47,45 +73,93 @@ a{color:inherit}
   transition: transform .15s ease, background .15s ease;
   cursor:pointer;
 }
-.card:hover{transform:translateY(-3px); background:rgba(255,255,255,.9)}
-.card h3{margin:4px 0 6px}
-.card p{margin:0; opacity:.9}
+.card:hover {transform:translateY(-3px); background:rgba(255,255,255,.9)}
+.card h3 {margin:4px 0 6px}
+.card p {margin:0; opacity:.9}
 
-.panel{
+/* ===========================================
+   Panels (Pop-up Sections)
+=========================================== */
+.panel {
   display:none; max-width:900px; margin:10px auto; padding:18px; background:rgba(255,255,255,.9);
   border-radius:var(--radius); box-shadow:var(--shadow)
 }
-.panel.open{display:block}
-.panel-header{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px}
-.close-panel{border:0; background:transparent; font-size:28px; line-height:1; cursor:pointer}
+.panel.open {display:block}
+.panel-header {
+  display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px
+}
+.close-panel {
+  border:0; background:transparent; font-size:28px; line-height:1; cursor:pointer
+}
 
-.items{list-style:none; margin:0; padding:0; display:grid; gap:14px}
-.items li{background:white; border-radius:12px; padding:14px; box-shadow:0 4px 18px rgba(0,0,0,.08)}
-.items h4{margin:4px 0 8px}
+/* ===========================================
+   Items List (Used in Panels)
+=========================================== */
+.items {list-style:none; margin:0; padding:0; display:grid; gap:14px}
+.items li {
+  background:white; border-radius:12px; padding:14px;
+  box-shadow:0 4px 18px rgba(0,0,0,.08)
+}
+.items h4 {margin:4px 0 8px}
 
-.btn{
+/* ===========================================
+   Buttons
+=========================================== */
+.btn {
   display:inline-block; padding:10px 14px; border-radius:10px; border:0; cursor:pointer;
   background:#0f172a; color:#fff; text-decoration:none; font-weight:600;
 }
-.btn.link{background:#1f2937}
+.btn.link {background:#1f2937}
 
-.contact{max-width:900px; margin:50px auto; text-align:center; padding:0 16px}
-.site-footer{padding:30px 16px; text-align:center; opacity:.8}
+/* ===========================================
+   Contact / Footer
+=========================================== */
+.contact {max-width:900px; margin:50px auto; text-align:center; padding:0 16px}
+.site-footer {padding:30px 16px; text-align:center; opacity:.8}
 
-/* Welcome modal */
-.modal-backdrop{
+/* ===========================================
+   Welcome Modal
+=========================================== */
+.modal-backdrop {
   position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
   background:rgba(0,0,0,.35); backdrop-filter: blur(6px); opacity:0; pointer-events:none; transition:opacity .2s ease;
 }
-.modal-backdrop.open{opacity:1; pointer-events:auto}
-.modal{
+.modal-backdrop.open {opacity:1; pointer-events:auto}
+.modal {
   background:white; border-radius:18px; box-shadow:var(--shadow); padding:24px; max-width:600px; margin:16px;
   transform:scale(.9); transition:transform .2s ease;
 }
-.modal-backdrop.open .modal{transform:scale(1)}
+.modal-backdrop.open .modal {transform:scale(1)}
 
-@media (prefers-reduced-motion: reduce){
-  .bg{animation:none}
-  .card:hover{transform:none}
-  .modal{transition:none}
+/* ===========================================
+   Motion Settings
+=========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .bg {animation:none}
+  .card:hover {transform:none}
+  .modal {transition:none}
+}
+
+/* ===========================================
+   Leadership Gallery Styling
+=========================================== */
+.leadership-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.leadership-gallery img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leadership-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
