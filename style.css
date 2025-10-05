@@ -163,3 +163,25 @@ a {color:inherit}
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* ===========================================
+   Certification PDF Styling
+=========================================== */
+.cert-pdf-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cert-pdf-link:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+}
+
