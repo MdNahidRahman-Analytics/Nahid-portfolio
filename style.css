@@ -185,3 +185,12 @@ a {color:inherit}
   transform: translateY(-2px);
 }
 
+/* ===========================================
+   💅 Project Links (Part A, B, C)
+=========================================== */
+.project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
