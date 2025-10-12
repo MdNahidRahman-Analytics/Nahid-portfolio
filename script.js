@@ -4,25 +4,33 @@
 const modal = document.getElementById("welcomeModal");
 const startBtn = document.getElementById("startBtn");
 const mainContent = document.querySelector(".main-content");
+
+// Check if user has already seen the modal
 const seen = sessionStorage.getItem("seenWelcome");
 
-// --- Show modal on first visit ---
+// --- Show modal only on first visit ---
 if (!seen) {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
+  mainContent.style.opacity = "0"; // hide content initially
 } else {
-  mainContent.classList.add("visible");
+  mainContent.classList.add("visible"); // show content if already seen
+  modal.style.display = "none"; // no modal after first time
 }
 
-// --- When user clicks Enter ---
+// --- When "Enter" button is clicked ---
 startBtn.addEventListener("click", () => {
+  // Hide modal immediately
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
+
+  // Save to sessionStorage so it doesn't show again
   sessionStorage.setItem("seenWelcome", "1");
 
-  // Delay 1 second, then fade in content
+  // Wait 1 second, then fade in content
   setTimeout(() => {
     mainContent.classList.add("visible");
+    modal.style.display = "none"; // completely remove modal
   }, 1000);
 });
 
@@ -42,15 +50,11 @@ const panels = {
   resume: document.getElementById("panel-resume"),
 };
 
-// --- Open the clicked panel ---
+// --- Open selected panel ---
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     const key = card.getAttribute("data-target");
-
-    // Close all open panels
     Object.values(panels).forEach((p) => p?.classList.remove("open"));
-
-    // Open selected panel
     const panel = panels[key];
     if (panel) {
       panel.classList.add("open");
@@ -59,7 +63,7 @@ cards.forEach((card) => {
   });
 });
 
-// --- Close button inside each panel ---
+// --- Close panel when × clicked ---
 closeBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const panel = e.target.closest(".panel");
