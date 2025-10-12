@@ -1,203 +1,370 @@
+/* ===========================================
+   🌈 ROOT VARIABLES
+   Define reusable styles for radius and shadow
+=========================================== */
 :root {
-  --radius:16px;
-  --shadow:0 10px 30px rgba(0,0,0,.15);
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Animated Gradient ===== */
+
+
+  
+/* ===========================================
+   🎨 ANIMATED GRADIENT BACKGROUND
+   Creates a smooth color-shifting animation
+=========================================== */
 .bg {
-  position:fixed; inset:0;
+  position: fixed;
+  inset: 0;
   background: linear-gradient(-45deg, #6a5cff, #36d1dc, #ff7eb3, #ffd36e);
   background-size: 400% 400%;
   animation: gradient 18s ease infinite;
-  z-index:-1;
+  z-index: -1;
 }
+
 @keyframes gradient {
-  0% {background-position:0% 50%}
-  50% {background-position:100% 50%}
-  100% {background-position:0% 50%}
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* ===== Base ===== */
-* {box-sizing:border-box}
-html,body {
-  margin:0;
-  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:#0f172a;
-}
-a {color:inherit}
 
-/* ===== Header ===== */
+
+  
+/* ===========================================
+   🧱 BASE STYLES
+   Reset margins and define general text settings
+=========================================== */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0f172a;
+}
+
+a { color: inherit; }
+
+
+
+  
+/* ===========================================
+   🧭 HEADER
+   Navigation bar and logo section at top
+=========================================== */
 .site-header {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
   backdrop-filter: blur(8px);
 }
 
+
+
 /* --- Profile photo beside name --- */
 .logo-container {
-  display:flex;
-  align-items:center;
-  gap:10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
 .logo-img {
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid rgba(255,255,255,0.6);
-  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .logo-text {
-  font-size:1.2rem;
-  font-weight:700;
-  color:#0f172a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
+
+
+/* --- Navigation buttons --- */
 .nav {
-  list-style:none;
-  display:flex;
-  gap:16px;
-  margin:0;
-  padding:0;
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
 }
+
 .nav a {
-  padding:8px 12px;
-  border-radius:10px;
-  text-decoration:none;
-  background:rgba(255,255,255,.5);
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.5);
 }
 
-/* ===== Intro ===== */
+
+
+  
+/* ===========================================
+   🏷️ INTRO SECTION
+   The top “Projects & Experience” section
+=========================================== */
 .intro {
-  max-width:900px;
-  margin:60px auto 20px;
-  text-align:center;
-  padding:0 16px;
+  max-width: 900px;
+  margin: 60px auto 20px;
+  text-align: center;
+  padding: 0 16px;
 }
+
 .tag {
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.6);
-  font-weight:600;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
 }
-.intro h2 {font-size:2.2rem; margin:10px 0 6px;}
-.intro p {opacity:.9}
 
-/* ===== Cards ===== */
+.intro h2 {
+  font-size: 2.2rem;
+  margin: 10px 0 6px;
+}
+
+.intro p {
+  opacity: 0.9;
+}
+
+
+
+  
+/* ===========================================
+   🗂️ GRID CARDS
+   Section for About Me, Projects, Resume, etc.
+=========================================== */
 .grid {
-  max-width:1100px;
-  margin:24px auto 50px;
-  padding:0 16px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-  gap:18px;
+  max-width: 1100px;
+  margin: 24px auto 50px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
 }
+
 .card {
-  background:rgba(255,255,255,.75);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow);
-  transition: transform .15s ease, background .15s ease;
-  cursor:pointer;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: pointer;
 }
-.card:hover {transform:translateY(-3px); background:rgba(255,255,255,.9);}
-.card h3 {margin:4px 0 6px;}
-.card p {margin:0; opacity:.9;}
 
-/* ===== Panels ===== */
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.card h3 {
+  margin: 4px 0 6px;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+
+
+  
+/* ===========================================
+   🪟 PANEL SECTIONS
+   Pop-up panels for About, Projects, Resume, etc.
+=========================================== */
 .panel {
-  display:none;
-  max-width:900px;
-  margin:10px auto;
-  padding:18px;
-  background:rgba(255,255,255,.9);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+  display: none;
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-.panel.open {display:block;}
+
+.panel.open { display: block; }
+
 .panel-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-bottom:8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
 }
+
 .close-panel {
-  border:0;
-  background:transparent;
-  font-size:28px;
-  line-height:1;
-  cursor:pointer;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
 }
 
-/* ===== Buttons ===== */
+
+
+  
+/* ===========================================
+   🖱️ BUTTON STYLES
+   Used for all clickable elements (links, modals, etc.)
+=========================================== */
 .btn {
-  display:inline-block;
-  padding:10px 14px;
-  border-radius:10px;
-  border:0;
-  cursor:pointer;
-  background:#0f172a;
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  background: #0f172a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
 }
-.btn.link {background:#1f2937;}
 
-/* ===== Contact & Footer ===== */
-.contact {max-width:900px; margin:50px auto; text-align:center; padding:0 16px;}
-.site-footer {padding:30px 16px; text-align:center; opacity:.8;}
+.btn.link { background: #1f2937; }
 
-/* ===== Leadership Gallery ===== */
+
+
+  
+/* ===========================================
+   ✉️ CONTACT & FOOTER
+   Email, LinkedIn, GitHub, and copyright
+=========================================== */
+.contact {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.site-footer {
+  padding: 30px 16px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+
+
+  
+/* ===========================================
+   👥 LEADERSHIP GALLERY
+   Displays leadership event images with hover effects
+=========================================== */
 .leadership-gallery {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
-  margin-top:15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 }
+
 .leadership-gallery img {
-  width:220px;
-  border-radius:10px;
-  box-shadow:0 4px 8px rgba(0,0,0,0.2);
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .leadership-gallery img:hover {
-  transform:scale(1.05);
-  box-shadow:0 6px 12px rgba(0,0,0,0.3);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Project Links ===== */
+
+
+  
+/* ===========================================
+   🔗 PROJECT LINKS
+   Used for Part A, B, C buttons in projects
+=========================================== */
 .project-links {
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-/* ===== Modal ===== */
+
+
+  
+/* ===========================================
+   💬 MODAL BACKDROP
+   Creates the dark blur effect for Welcome pop-up
+=========================================== */
 .modal-backdrop {
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(0,0,0,.35);
-  backdrop-filter:blur(6px);
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .2s ease;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
-.modal-backdrop.open {opacity:1; pointer-events:auto;}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+/* ===========================================
+   🪩 MODAL BOX (Welcome Message)
+   The white box that appears in the center
+=========================================== */
 .modal {
-  background:white;
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  padding:24px;
-  max-width:600px;
-  margin:16px;
-  transform:scale(.9);
-  transition:transform .2s ease;
+  background: white;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 40px;              /* increased padding */
+  max-width: 700px;           /* slightly wider */
+  margin: 16px;
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
 }
-.modal-backdrop.open .modal {transform:scale(1);}
+
+.modal-backdrop.open .modal {
+  transform: scale(1);
+}
+
+
+
+/* ===========================================
+   🪄 WELCOME MODAL TEXT & BUTTON STYLING
+   Makes the title and button bigger & centered
+=========================================== */
+#welcomeTitle {
+  font-size: 2.4rem;           /* bigger title */
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#startBtn {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  padding: 12px 26px;
+  border-radius: 12px;
+  background: #0f172a;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#startBtn:hover {
+  background: #1e293b;
+  transform: scale(1.05);
+}
