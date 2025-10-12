@@ -5,35 +5,29 @@ const modal = document.getElementById("welcomeModal");
 const startBtn = document.getElementById("startBtn");
 const mainContent = document.querySelector(".main-content");
 
-// Check if modal has already been seen
+// Check if modal already seen
 const seen = sessionStorage.getItem("seenWelcome");
 
-// --- Show modal only the first time ---
+// Show modal only first time
 if (!seen) {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
-  mainContent.style.opacity = "0"; // hide content until Enter is clicked
+  mainContent.style.opacity = "0";
 } else {
-  modal.style.display = "none"; // hide modal on reloads
-  mainContent.classList.add("visible"); // instantly show content
+  modal.style.display = "none";
+  mainContent.classList.add("visible");
 }
 
-// --- When "Enter" button is clicked ---
+// When Enter clicked
 startBtn.addEventListener("click", () => {
-  // Hide modal
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
-
-  // Remember that user has seen it
   sessionStorage.setItem("seenWelcome", "1");
-
-  // Wait 0.8s for a smooth fade-in
   setTimeout(() => {
     modal.style.display = "none";
     mainContent.classList.add("visible");
-  }, 800);
+  }, 1000);
 });
-
 
 // ====================================================
 // ===== Panels (Cards that Open/Close Details) =======
@@ -50,7 +44,7 @@ const panels = {
   resume: document.getElementById("panel-resume"),
 };
 
-// --- Open selected panel ---
+// Open selected panel
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     const key = card.getAttribute("data-target");
@@ -63,14 +57,13 @@ cards.forEach((card) => {
   });
 });
 
-// --- Close panel when × clicked ---
+// Close panel when × clicked
 closeBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const panel = e.target.closest(".panel");
     panel?.classList.remove("open");
   });
 });
-
 
 // ====================================================
 // ===== Footer Year (Auto Updates Each Year) =========
