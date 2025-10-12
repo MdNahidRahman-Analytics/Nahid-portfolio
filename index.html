@@ -11,10 +11,10 @@
 </head>
 <body>
 
-  <!-- ===== Section: Animated Gradient Background ===== -->
+  <!-- ===== Animated Background ===== -->
   <div class="bg"></div>
 
-  <!-- ===== Section: Header (Navigation + Logo) ===== -->
+  <!-- ===== Header ===== -->
   <header class="site-header" role="banner">
     <h1 class="logo">Md Nahid Rahman</h1>
     <nav aria-label="Primary">
@@ -25,55 +25,38 @@
     </nav>
   </header>
 
-
-<!-- ===== Section: Welcome Modal ===== -->
-<div class="modal-backdrop" id="welcomeModal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-labelledby="welcomeTitle" aria-modal="true">
-    <h2 id="welcomeTitle">Welcome to my portfolio</h2>
-    <button id="startBtn" class="btn">Enter</button>
+  <!-- ===== Welcome Modal ===== -->
+  <div class="modal-backdrop" id="welcomeModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="welcomeTitle" aria-modal="true">
+      <h2 id="welcomeTitle">Welcome to my portfolio</h2>
+      <button id="startBtn" class="btn">Enter</button>
+    </div>
   </div>
-</div>
 
-
-  <!-- ===== Section: Main Content Container ===== -->
+  <!-- ===== Main Section ===== -->
   <main id="sections">
 
-    <!-- ===== Section: Intro ===== -->
+    <!-- ===== Intro Section ===== -->
     <section class="intro">
       <p class="tag">Portfolio</p>
       <h2>Projects & experience</h2>
       <p>Explore my academic projects, internship work, certifications, leadership, and resume.</p>
     </section>
 
-    <!-- ===== Section: Category Cards (Home Buttons) ===== -->
+    <!-- ===== Category Cards ===== -->
     <section class="grid">
-      <article class="card" data-target="about">
-        <h3>About me</h3>
-      </article>
-
-      <article class="card" data-target="academic">
-        <h3>Academic Projects</h3>
-      </article>
-
-      <article class="card" data-target="intern">
-        <h3>Data & Business Analyst Intern</h3>
-      </article>
-
-      <article class="card" data-target="certs">
-        <h3>Certifications</h3>
-      </article>
-
-      <article class="card" data-target="leadership">
-        <h3>Leadership</h3>
-      </article>
-
+      <article class="card" data-target="about"><h3>About me</h3></article>
+      <article class="card" data-target="academic"><h3>Academic Projects</h3></article>
+      <article class="card" data-target="intern"><h3>Data & Business Analyst Intern</h3></article>
+      <article class="card" data-target="certs"><h3>Certifications</h3></article>
+      <article class="card" data-target="leadership"><h3>Leadership</h3></article>
       <article class="card" data-target="resume">
         <h3>Resume</h3>
         <p>Download the latest PDF</p>
       </article>
     </section>
 
-    <!-- ===== Section: About Me ===== -->
+    <!-- ===== About Me ===== -->
     <section id="panel-about" class="panel" aria-labelledby="panel-about-title">
       <div class="panel-header">
         <h3 id="panel-about-title">About Me</h3>
@@ -86,44 +69,38 @@
       </p>
     </section>
 
-    <!-- ===== Section: Academic Projects ===== -->
- <!-- ===== Section: Academic Projects ===== -->
-<section id="panel-academic" class="panel" aria-labelledby="panel-academic-title">
-  <div class="panel-header">
-    <h3 id="panel-academic-title">Academic Projects</h3>
-    <button class="close-panel" data-close>&times;</button>
-  </div>
-  <ul class="items">
+    <!-- ===== Academic Projects ===== -->
+    <section id="panel-academic" class="panel" aria-labelledby="panel-academic-title">
+      <div class="panel-header">
+        <h3 id="panel-academic-title">Academic Projects</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <ul class="items">
 
-    <li>
-      <h4>Data Analytics Project – Big Data Health Analytics on Global Cancer and U.S. Clinical Diagnostics</h4>
-      <p>Global Cancer (Kaggle), U.S. Health (CDC) — regression, clustering, multivariate visuals in Tableau & SAS Viya.</p>
-      <a class="btn link"
-   href="https://drive.google.com/file/d/16h_8WAc9_2Z0IWAWkVQJ5usxSqWgnV7_/view?usp=sharing"
-   target="_blank"
-   rel="noopener noreferrer">
-  View project
-</a>
+        <li>
+          <h4>Data Analytics Project – Big Data Health Analytics on Global Cancer and U.S. Clinical Diagnostics</h4>
+          <p>Global Cancer (Kaggle), U.S. Health (CDC) — regression, clustering, multivariate visuals in Tableau & SAS Viya.</p>
+          <a class="btn link"
+             href="https://drive.google.com/file/d/16h_8WAc9_2Z0IWAWkVQJ5usxSqWgnV7_/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">
+             View project
+          </a>
+        </li>
 
-    <li>
-  <h4>Research Analyst Project – U.S. Air Quality & Pollution Analysis (EPA Data, 2020–2024)</h4>
+        <li>
+          <h4>Research Analyst Project – U.S. Air Quality & Pollution Analysis (EPA Data, 2020–2024)</h4>
+          <p>Combined insights from Parts A–C: cleaned and transformed over 10M+ U.S. air quality records using Google BigQuery (SQL) for trend and pattern analysis, applied predictive modeling in R to forecast AQI (R² = 0.89) and identify high-risk pollution zones, and built interactive Tableau and Power BI dashboards to visualize AQI exceedance and pollution patterns.</p>
+          <div class="project-links">
+            <a class="btn link" href="https://drive.google.com/file/d/1hZv2isqUHTTWNdSqBpodWfKgOhQRJomT/view?usp=sharing" target="_blank" rel="noopener">View Part A</a>
+            <a class="btn link" href="https://drive.google.com/file/d/1uPA-leJ5m5bgLfBlSgNho_fygVlTvSf8/view?usp=sharing" target="_blank" rel="noopener">View Part B</a>
+            <a class="btn link" href="https://drive.google.com/file/d/1lGjvPDSx18NpXn_4X2slUYWfGsu7x-Ps/view?usp=sharing" target="_blank" rel="noopener">View Part C</a>
+          </div>
+        </li>
 
-  <p>Combined insights from Parts A–C: cleaned and transformed over 10M+ U.S. air quality records using Google BigQuery (SQL) for trend and pattern analysis, applied predictive modeling in R to forecast AQI (R² = 0.89) and identify high-risk pollution zones, and built interactive Tableau and Power BI dashboards to visualize AQI exceedance and pollution patterns.</p>
+      </ul>
+    </section>
 
-  <!-- ===== Multiple Parts Buttons ===== -->
-  <div class="project-links">
-    <a class="btn link" href="https://drive.google.com/file/d/1hZv2isqUHTTWNdSqBpodWfKgOhQRJomT/view?usp=sharing" 
-       target="_blank" rel="noopener">View Part A</a>
-    <a class="btn link" href="https://drive.google.com/file/d/1uPA-leJ5m5bgLfBlSgNho_fygVlTvSf8/view?usp=sharing" 
-       target="_blank" rel="noopener">View Part B</a>
-    <a class="btn link" href="https://drive.google.com/file/d/1lGjvPDSx18NpXn_4X2slUYWfGsu7x-Ps/view?usp=sharing" 
-       target="_blank" rel="noopener">View Part C</a>
-  </div>
-</li>
-
-
-
-    <!-- ===== Section: Internship ===== -->
+    <!-- ===== Internship Section ===== -->
     <section id="panel-intern" class="panel" aria-labelledby="panel-intern-title">
       <div class="panel-header">
         <h3 id="panel-intern-title">Data & Business Analyst Intern</h3>
@@ -136,93 +113,71 @@
             I analyzed over 40 months of hotel booking data using SQL to identify seasonal trends and business patterns.
             Using Python and Pandas, I cleaned and transformed the dataset before applying regression models to forecast
             room nights and average daily rates (ADR), achieving an R² of 0.999. These insights supported operational
-            improvements, increasing bookings and reducing cancellation rates from nearly 41% to under 8%. To communicate
-            findings effectively, I designed interactive Tableau dashboards showcasing ADR fluctuations and booking trends,
-            helping management make data-driven decisions and strategic forecasts.
+            improvements, increasing bookings and reducing cancellation rates. I also built interactive Tableau dashboards
+            showcasing ADR fluctuations and booking trends for management decisions.
           </p>
           <a class="btn link" href="https://github.com/USERNAME/REPO_OR_FOLDER_INTERNSHIP" target="_blank" rel="noopener">See artifacts</a>
         </li>
       </ul>
     </section>
 
-    <!-- ===== Section: Certifications =================================================================================================================== -->
-  <!-- ===== Section: Certifications ==================================================================================================================== -->
-<section id="panel-certs" class="panel" aria-labelledby="panel-certs-title">
-  <div class="panel-header">
-    <h3 id="panel-certs-title">Certifications</h3>
-    <button class="close-panel" data-close>&times;</button>
-  </div>
-  <ul class="items">
-    <li>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Coursera_logo.svg" 
-           alt="Coursera" style="width:80px;margin-bottom:8px;"><br>
-      <strong>Google Data Analytics Professional Certificate</strong> — Coursera, 2024
-      <br>
-      <a href="https://coursera.org/share/e69d2ea460e295b58e26ab941a9d33d3" target="_blank" rel="noopener">
-        View Certificate
-      </a>
-    </li>
+    <!-- ===== Certifications ===== -->
+    <section id="panel-certs" class="panel" aria-labelledby="panel-certs-title">
+      <div class="panel-header">
+        <h3 id="panel-certs-title">Certifications</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <ul class="items">
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Coursera_logo.svg" 
+               alt="Coursera" style="width:80px;margin-bottom:8px;"><br>
+          <strong>Google Data Analytics Professional Certificate</strong> — Coursera, 2024
+          <br>
+          <a href="https://coursera.org/share/e69d2ea460e295b58e26ab941a9d33d3" target="_blank" rel="noopener">View Certificate</a>
+        </li>
 
-    <!-- ✅ Added Business Analytics Certificate -->
-    <li>
-      <img src="https://seeklogo.com/images/S/stukent-logo-29AEAA8F76-seeklogo.com.png" 
-           alt="Stukent" style="width:80px;margin-bottom:8px;"><br>
-      <strong>Business Analytics Simternship™ Certificate</strong> — Stukent, 2024
-      <br>
-      <a href="https://raw.githubusercontent.com/MdNahidRahman-Analytics/Nahid-portfolio/main/Business%20Analytics%20Certificate.pdf" 
-         target="_blank" rel="noopener">
-         View Certificate
-      </a>
-    </li>
+        <li>
+          <img src="https://seeklogo.com/images/S/stukent-logo-29AEAA8F76-seeklogo.com.png" 
+               alt="Stukent" style="width:80px;margin-bottom:8px;"><br>
+          <strong>Business Analytics Simternship™ Certificate</strong> — Stukent, 2024
+          <br>
+          <a href="https://raw.githubusercontent.com/MdNahidRahman-Analytics/Nahid-portfolio/main/Business%20Analytics%20Certificate.pdf" 
+             target="_blank" rel="noopener">View Certificate</a>
+        </li>
 
-    <li><strong>Microsoft PL-300 (Power BI Data Analyst)</strong> — Planned</li>
-    <li><strong>Tableau Desktop Specialist</strong> — Planned</li>
-    <li><strong>SQL (HackerRank / DataCamp)</strong> — Planned</li>
-  </ul>
-</section>
+        <li><strong>Microsoft PL-300 (Power BI Data Analyst)</strong> — Planned</li>
+        <li><strong>Tableau Desktop Specialist</strong> — Planned</li>
+        <li><strong>SQL (HackerRank / DataCamp)</strong> — Planned</li>
+      </ul>
+    </section>
 
+    <!-- ===== Leadership ===== -->
+    <section id="panel-leadership" class="panel" aria-labelledby="panel-leadership-title">
+      <div class="panel-header">
+        <h3 id="panel-leadership-title">Leadership</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <p>International Student Association | Secretary</p>
+      <div class="leadership-gallery">
+        <img src="IMG_3202.jpeg" alt="Leadership Event 1">
+        <img src="IMG_3214.jpeg" alt="Leadership Event 2">
+        <img src="IMG_3248.jpeg" alt="Leadership Event 3">
+        <img src="IMG_3250.jpeg" alt="Leadership Event 4">
+      </div>
+    </section>
 
-  
+    <!-- ===== Resume ===== -->
+    <section id="panel-resume" class="panel" aria-labelledby="panel-resume-title">
+      <div class="panel-header">
+        <h3 id="panel-resume-title">Resume</h3>
+        <button class="close-panel" data-close>&times;</button>
+      </div>
+      <p>You can view my latest resume here:</p>
+      <a class="btn link" href="https://drive.google.com/file/d/1FDmJUXQcbzXFINCtMRV7w2qZy6DRo1qR/view?usp=sharing"
+         target="_blank" rel="noopener">View Resume</a>
+    </section>
 
-  
-<!-- ===== Section: Leadership ===== -->
-<section id="panel-leadership" class="panel" aria-labelledby="panel-leadership-title">
-  <div class="panel-header">
-    <h3 id="panel-leadership-title">Leadership</h3>
-    <button class="close-panel" data-close>&times;</button>
-  </div>
-  <p>International Student Association | Secretary</p>
-
-  <!-- Leadership Gallery -->
-  <div class="leadership-gallery">
-    <img src="IMG_3202.jpeg" alt="Leadership Event 1">
-    <img src="IMG_3214.jpeg" alt="Leadership Event 2">
-    <img src="IMG_3248.jpeg" alt="Leadership Event 3">
-    <img src="IMG_3250.jpeg" alt="Leadership Event 4">
-  </div>
-</section>
-
-
-  
-    <!-- ===== Section: Resume ===== -->
-<!-- ===== Section: Resume ===== -->
-<section id="panel-resume" class="panel" aria-labelledby="panel-resume-title">
-  <div class="panel-header">
-    <h3 id="panel-resume-title">Resume</h3>
-    <button class="close-panel" data-close>&times;</button>
-  </div>
-  <p>You can view my latest resume here:</p>
-  <a class="btn link" 
-     href="https://drive.google.com/file/d/1FDmJUXQcbzXFINCtMRV7w2qZy6DRo1qR/view?usp=sharing" 
-     target="_blank" 
-     rel="noopener">
-    View Resume
-  </a>
-</section>
-
-
-
-    <!-- ===== Section: Contact ===== -->
+    <!-- ===== Contact ===== -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>
@@ -231,9 +186,10 @@
         <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
       </p>
     </section>
+
   </main>
 
-  <!-- ===== Section: Footer ===== -->
+  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <small>© <span id="year"></span> Md Nahid Rahman • Built with HTML/CSS/JS</small>
   </footer>
