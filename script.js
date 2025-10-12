@@ -1,17 +1,33 @@
-// open welcome modal once per visit
+// ===== Welcome Modal (Once per Session) =====
 const modal = document.getElementById('welcomeModal');
 const startBtn = document.getElementById('startBtn');
+const mainContent = document.querySelector('.main-content');
 const seen = sessionStorage.getItem('seenWelcome');
-function openModal(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
-function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
 
-if(!seen){ openModal(); }
-startBtn?.addEventListener('click', () => { sessionStorage.setItem('seenWelcome','1'); closeModal(); });
+if (!seen) {
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  mainContent.style.opacity = '0';
+} else {
+  modal.style.display = 'none';
+  mainContent.classList.add('visible');
+}
 
-// open/close panels from cards
+startBtn.addEventListener('click', () => {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  sessionStorage.setItem('seenWelcome', '1');
+  setTimeout(() => {
+    modal.style.display = 'none';
+    mainContent.classList.add('visible');
+  }, 800);
+});
+
+// ===== Panels (Open/Close) =====
 const cards = document.querySelectorAll('.card');
 const closeBtns = document.querySelectorAll('[data-close]');
 const panels = {
+  about: document.getElementById('panel-about'),
   academic: document.getElementById('panel-academic'),
   intern: document.getElementById('panel-intern'),
   certs: document.getElementById('panel-certs'),
@@ -19,23 +35,24 @@ const panels = {
   resume: document.getElementById('panel-resume'),
 };
 
-cards.forEach(card=>{
+cards.forEach(card => {
   card.addEventListener('click', () => {
     const key = card.getAttribute('data-target');
-    // close any open panel
-    Object.values(panels).forEach(p => p.classList.remove('open'));
-    // open selected
+    Object.values(panels).forEach(p => p?.classList.remove('open'));
     const panel = panels[key];
-    if(panel){ panel.classList.add('open'); panel.scrollIntoView({behavior:'smooth', block:'start'}); }
+    if (panel) {
+      panel.classList.add('open');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 });
 
-closeBtns.forEach(btn=>{
-  btn.addEventListener('click', (e)=>{
+closeBtns.forEach(btn => {
+  btn.addEventListener('click', e => {
     const panel = e.target.closest('.panel');
     panel?.classList.remove('open');
   });
 });
 
-// footer year
+// ===== Footer Year =====
 document.getElementById('year').textContent = new Date().getFullYear();
