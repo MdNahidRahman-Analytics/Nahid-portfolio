@@ -1,9 +1,18 @@
 // ================================================
 // ===== Welcome Modal (Shows once per session) ====
 // ================================================
-const modal = document.getElementById('welcomeModal');
-const startBtn = document.getElementById('startBtn');
-const seen = sessionStorage.getItem('seenWelcome');
+document.getElementById("startBtn").addEventListener("click", function () {
+  const modal = document.getElementById("welcomeModal");
+  const content = document.querySelector(".main-content");
+
+  modal.style.display = "none"; // hide the modal
+
+  // Delay 1 second, then fade in
+  setTimeout(() => {
+    content.classList.add("visible");
+  }, 1000);
+});
+
 
 // --- Open Modal Function ---
 function openModal() {
