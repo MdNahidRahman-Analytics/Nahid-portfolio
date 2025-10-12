@@ -76,8 +76,8 @@ a { color: inherit; }
 .logo-img {
 /* --- Profile photo beside name (Bigger & Better Framing) --- */
 .logo-img {
-  width: 110px;               /* increased size */
-  height: 110px;              /* increased size */
+  width: 80px;               /* increased size */
+  height: 80px;              /* increased size */
   border-radius: 50%;        /* keeps it circular */
   object-fit: contain;       /* shows full head instead of cutting */
   background-color: #fff;    /* adds a clean background edge */
@@ -87,7 +87,7 @@ a { color: inherit; }
 
 .logo-text {
   font-size: 2rem;           /* increased name size */
-  font-weight: 900;          /* makes name bolder */
+  font-weight: 800;          /* makes name bolder */
   color: #0f172a;
 }
 
