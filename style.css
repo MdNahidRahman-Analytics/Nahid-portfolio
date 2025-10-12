@@ -38,51 +38,57 @@ html, body {
 a { color: inherit; }
 
 /* ===========================================
-   🧭 HEADER (Modified for large photo)
+   🧭 HEADER (Balanced Professional Layout)
 =========================================== */
 .site-header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 40px 20px 20px;
-  backdrop-filter: blur(8px);
+  gap: 40px; /* space between photo and name */
+  padding: 60px 20px 30px; /* reduced empty space above */
+  flex-wrap: wrap; /* responsive for small screens */
+  text-align: left;
+  position: relative;
 }
 
-/* --- Profile container like portfolio card --- */
+/* --- Profile container --- */
 .logo-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  max-width: 340px;
-  margin: 20px auto;
+  gap: 30px;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 auto;
 }
 
-/* --- Large circular profile photo --- */
+/* --- Profile photo (perfect round and neat) --- */
 .logo-img {
-  width: 280px;
-  height: 280px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top center; /* keeps head visible */
-  background-color: #fff;
-  border: 5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  display: block;
-  margin-bottom: 15px;
+  object-position: top center;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* --- Centered name below photo --- */
+/* --- Name beside the photo --- */
 .logo-text {
-  display: block;
-  text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: #0f172a;
-  margin: 10px 0 5px;
+  margin: 0;
+  text-align: left;
+}
+
+/* --- Subtitle under name --- */
+.subtitle {
+  font-size: 1rem;
+  color: #374151;
+  opacity: 0.85;
+  margin-top: 4px;
+  font-weight: 500;
 }
 
 /* --- Navigation buttons --- */
@@ -90,16 +96,24 @@ a { color: inherit; }
   list-style: none;
   display: flex;
   gap: 16px;
-  margin-top: 20px;
+  margin: 0;
   padding: 0;
+  position: absolute;
+  top: 25px;
+  right: 25px;
 }
 
 .nav a {
   padding: 8px 12px;
   border-radius: 10px;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* ===========================================
@@ -107,7 +121,7 @@ a { color: inherit; }
 =========================================== */
 .intro {
   max-width: 900px;
-  margin: 60px auto 20px;
+  margin: 30px auto 20px;
   text-align: center;
   padding: 0 16px;
 }
