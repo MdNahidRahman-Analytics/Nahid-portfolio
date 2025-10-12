@@ -65,22 +65,32 @@ a { color: inherit; }
 
 /* --- Profile photo beside name --- */
 .logo-container {
- /* --- Profile photo beside name (Bigger & Better Framing) --- */
-.logo-img {
-  width: 80px;               /* increased size */
-  height: 80px;              /* increased size */
-  border-radius: 50%;        /* keeps it circular */
-  object-fit: contain;       /* shows full head instead of cutting */
-  background-color: #fff;    /* adds a clean background edge */
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+/* --- Profile photo beside name (Improved Size & Alignment) --- */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;                   /* more space between image and name */
 }
 
-.logo-text {
-  font-size: 2rem;           /* increased name size */
-  font-weight: 800;          /* makes name bolder */
-  color: #0f172a;
+/* Make image bigger and prevent cutting head */
+.logo-img {
+  width: 110px;                /* larger image */
+  height: 110px;               /* larger image */
+  border-radius: 50%;          /* keeps round shape */
+  object-fit: contain;         /* shows full head */
+  background-color: #fff;      /* clean circular background */
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
+/* Make your name more bold and eye-catching */
+.logo-text {
+  font-size: 2.5rem;           /* much larger name */
+  font-weight: 900;            /* heavy, professional font */
+  color: #0f172a;              /* dark navy text */
+  letter-spacing: 0.5px;       /* slight spacing for balance */
+}
+
 
 
 /* --- Navigation buttons --- */
@@ -363,4 +373,19 @@ a { color: inherit; }
 #startBtn:hover {
   background: #1e293b;
   transform: scale(1.05);
+}
+
+
+
+
+
+@media (max-width: 600px) {
+  .logo-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
 }
