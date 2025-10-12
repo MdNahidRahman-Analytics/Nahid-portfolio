@@ -213,3 +213,13 @@ a {color:inherit}
   background-color: white;
 }
 
+/* ===== Smooth Fade-in Animation ===== */
+.main-content {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.main-content.visible {
+  opacity: 1;
+}
+
