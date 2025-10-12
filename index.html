@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- ===== Meta & Fonts ===== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Md Nahid Rahman — Portfolio</title>
@@ -9,19 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
   <!-- ===== Animated Background ===== -->
   <div class="bg"></div>
 
   <!-- ===== Header ===== -->
   <header class="site-header" role="banner">
     <div class="header">
-<img src="BB.jpg" alt="Md Nahid Rahman" class="profile-pic">
-  <h1 class="logo">Md Nahid Rahman</h1>
-</div>
+      <img src="BB.jpg" alt="Md Nahid Rahman" class="profile-pic">
+      <h1 class="logo">Md Nahid Rahman</h1>
+    </div>
     <nav aria-label="Primary">
-     <ul class="nav">
+      <ul class="nav">
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -36,7 +37,7 @@
   </div>
 
   <!-- ===== Main Section ===== -->
-  <main id="sections">
+  <main id="sections" class="main-content">
 
     <!-- ===== Intro Section ===== -->
     <section class="intro">
@@ -52,13 +53,10 @@
       <article class="card" data-target="intern"><h3>Data & Business Analyst Intern</h3></article>
       <article class="card" data-target="certs"><h3>Certifications</h3></article>
       <article class="card" data-target="leadership"><h3>Leadership</h3></article>
-      <article class="card" data-target="resume">
-        <h3>Resume</h3>
-        <p>Download the latest PDF</p>
-      </article>
+      <article class="card" data-target="resume"><h3>Resume</h3><p>Download the latest PDF</p></article>
     </section>
 
-    <!-- ===== About Me ===== -->
+    <!-- ===== About Me Section ===== -->
     <section id="panel-about" class="panel" aria-labelledby="panel-about-title">
       <div class="panel-header">
         <h3 id="panel-about-title">About Me</h3>
@@ -71,14 +69,13 @@
       </p>
     </section>
 
-    <!-- ===== Academic Projects ===== -->
+    <!-- ===== Academic Projects Section ===== -->
     <section id="panel-academic" class="panel" aria-labelledby="panel-academic-title">
       <div class="panel-header">
         <h3 id="panel-academic-title">Academic Projects</h3>
         <button class="close-panel" data-close>&times;</button>
       </div>
       <ul class="items">
-
         <li>
           <h4>Data Analytics Project – Big Data Health Analytics on Global Cancer and U.S. Clinical Diagnostics</h4>
           <p>Global Cancer (Kaggle), U.S. Health (CDC) — regression, clustering, multivariate visuals in Tableau & SAS Viya.</p>
@@ -88,17 +85,16 @@
              View project
           </a>
         </li>
-
         <li>
           <h4>Research Analyst Project – U.S. Air Quality & Pollution Analysis (EPA Data, 2020–2024)</h4>
-          <p>Combined insights from Parts A–C: cleaned and transformed over 10M+ U.S. air quality records using Google BigQuery (SQL) for trend and pattern analysis, applied predictive modeling in R to forecast AQI (R² = 0.89) and identify high-risk pollution zones, and built interactive Tableau and Power BI dashboards to visualize AQI exceedance and pollution patterns.</p>
+          <p>Cleaned 10M+ U.S. air quality records using Google BigQuery (SQL), applied predictive modeling in R to forecast AQI (R² = 0.89),
+          and built Tableau and Power BI dashboards to visualize AQI and pollution trends.</p>
           <div class="project-links">
             <a class="btn link" href="https://drive.google.com/file/d/1hZv2isqUHTTWNdSqBpodWfKgOhQRJomT/view?usp=sharing" target="_blank" rel="noopener">View Part A</a>
             <a class="btn link" href="https://drive.google.com/file/d/1uPA-leJ5m5bgLfBlSgNho_fygVlTvSf8/view?usp=sharing" target="_blank" rel="noopener">View Part B</a>
             <a class="btn link" href="https://drive.google.com/file/d/1lGjvPDSx18NpXn_4X2slUYWfGsu7x-Ps/view?usp=sharing" target="_blank" rel="noopener">View Part C</a>
           </div>
         </li>
-
       </ul>
     </section>
 
@@ -112,18 +108,15 @@
         <li>
           <h4>Americas Best Value Inn — Internship Highlights</h4>
           <p>
-            I analyzed over 40 months of hotel booking data using SQL to identify seasonal trends and business patterns.
-            Using Python and Pandas, I cleaned and transformed the dataset before applying regression models to forecast
-            room nights and average daily rates (ADR), achieving an R² of 0.999. These insights supported operational
-            improvements, increasing bookings and reducing cancellation rates. I also built interactive Tableau dashboards
-            showcasing ADR fluctuations and booking trends for management decisions.
+            I analyzed 40+ months of hotel booking data in SQL to find seasonal trends, built regression models in Python
+            (R² = 0.999), and designed Tableau dashboards to improve decision-making and reduce cancellations.
           </p>
           <a class="btn link" href="https://github.com/USERNAME/REPO_OR_FOLDER_INTERNSHIP" target="_blank" rel="noopener">See artifacts</a>
         </li>
       </ul>
     </section>
 
-    <!-- ===== Certifications ===== -->
+    <!-- ===== Certifications Section ===== -->
     <section id="panel-certs" class="panel" aria-labelledby="panel-certs-title">
       <div class="panel-header">
         <h3 id="panel-certs-title">Certifications</h3>
@@ -131,29 +124,19 @@
       </div>
       <ul class="items">
         <li>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Coursera_logo.svg" 
-               alt="Coursera" style="width:80px;margin-bottom:8px;"><br>
-          <strong>Google Data Analytics Professional Certificate</strong> — Coursera, 2024
-          <br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Coursera_logo.svg" alt="Coursera" style="width:80px;margin-bottom:8px;"><br>
+          <strong>Google Data Analytics Professional Certificate</strong> — Coursera, 2024<br>
           <a href="https://coursera.org/share/e69d2ea460e295b58e26ab941a9d33d3" target="_blank" rel="noopener">View Certificate</a>
         </li>
-
         <li>
-          <img src="https://seeklogo.com/images/S/stukent-logo-29AEAA8F76-seeklogo.com.png" 
-               alt="Stukent" style="width:80px;margin-bottom:8px;"><br>
-          <strong>Business Analytics Simternship™ Certificate</strong> — Stukent, 2024
-          <br>
-          <a href="https://raw.githubusercontent.com/MdNahidRahman-Analytics/Nahid-portfolio/main/Business%20Analytics%20Certificate.pdf" 
-             target="_blank" rel="noopener">View Certificate</a>
+          <img src="https://seeklogo.com/images/S/stukent-logo-29AEAA8F76-seeklogo.com.png" alt="Stukent" style="width:80px;margin-bottom:8px;"><br>
+          <strong>Business Analytics Simternship™ Certificate</strong> — Stukent, 2024<br>
+          <a href="https://raw.githubusercontent.com/MdNahidRahman-Analytics/Nahid-portfolio/main/Business%20Analytics%20Certificate.pdf" target="_blank" rel="noopener">View Certificate</a>
         </li>
-
-        <li><strong>Microsoft PL-300 (Power BI Data Analyst)</strong> — Planned</li>
-        <li><strong>Tableau Desktop Specialist</strong> — Planned</li>
-        <li><strong>SQL (HackerRank / DataCamp)</strong> — Planned</li>
       </ul>
     </section>
 
-    <!-- ===== Leadership ===== -->
+    <!-- ===== Leadership Section ===== -->
     <section id="panel-leadership" class="panel" aria-labelledby="panel-leadership-title">
       <div class="panel-header">
         <h3 id="panel-leadership-title">Leadership</h3>
@@ -168,26 +151,25 @@
       </div>
     </section>
 
-    <!-- ===== Resume ===== -->
+    <!-- ===== Resume Section ===== -->
     <section id="panel-resume" class="panel" aria-labelledby="panel-resume-title">
       <div class="panel-header">
         <h3 id="panel-resume-title">Resume</h3>
         <button class="close-panel" data-close>&times;</button>
       </div>
       <p>You can view my latest resume here:</p>
-      <a class="btn link" href="https://drive.google.com/file/d/1FDmJUXQcbzXFINCtMRV7w2qZy6DRo1qR/view?usp=sharing"
-         target="_blank" rel="noopener">View Resume</a>
+      <a class="btn link" href="https://drive.google.com/file/d/1FDmJUXQcbzXFINCtMRV7w2qZy6DRo1qR/view?usp=sharing" target="_blank" rel="noopener">View Resume</a>
     </section>
 
-    <!-- ===== Contact ===== -->
+    <!-- ===== Contact Section ===== -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
-<p>
-  📧 <a href="mailto:rahmanmdnahid815@gmail.com">rahmanmdnahid815@gmail.com</a><br>
-  📱 870-530-3721<br>
-  <a href="https://linkedin.com">LinkedIn</a> • 
-  <a href="https://github.com">GitHub</a>
-</p>
+      <p>
+        📧 <a href="mailto:rahmanmdnahid815@gmail.com">rahmanmdnahid815@gmail.com</a><br>
+        📱 870-530-3721<br>
+        <a href="https://linkedin.com">LinkedIn</a> • 
+        <a href="https://github.com">GitHub</a>
+      </p>
     </section>
 
   </main>
@@ -197,7 +179,6 @@
     <small>© <span id="year"></span> Md Nahid Rahman • Built with HTML/CSS/JS</small>
   </footer>
 
-  <!-- ===== Script ===== -->
   <script src="script.js"></script>
 </body>
 </html>
