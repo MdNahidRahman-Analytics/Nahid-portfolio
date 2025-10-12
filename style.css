@@ -203,10 +203,13 @@ a {color:inherit}
 }
 
 .profile-pic {
-  width: 120px;      /* image size - you can make it bigger or smaller */
-  height: 120px;
+  width: 150px;              /* Bigger and clearer */
+  height: 150px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  object-fit: contain;       /* shows full image */
+  object-position: top;      /* adjusts view to show top (your head) */
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
+
