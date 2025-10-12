@@ -1,58 +1,322 @@
-// ===== Welcome Modal (Once per Session) =====
-const modal = document.getElementById('welcomeModal');
-const startBtn = document.getElementById('startBtn');
-const mainContent = document.querySelector('.main-content');
-const seen = sessionStorage.getItem('seenWelcome');
-
-if (!seen) {
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden', 'false');
-  mainContent.style.opacity = '0';
-} else {
-  modal.style.display = 'none';
-  mainContent.classList.add('visible');
+/* ===========================================
+   Root Variables
+=========================================== */
+:root {
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-startBtn.addEventListener('click', () => {
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-  sessionStorage.setItem('seenWelcome', '1');
-  setTimeout(() => {
-    modal.style.display = 'none';
-    mainContent.classList.add('visible');
-  }, 800);
-});
+/* ===========================================
+   Animated Gradient Background
+=========================================== */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(-45deg, #6a5cff, #36d1dc, #ff7eb3, #ffd36e);
+  background-size: 400% 400%;
+  animation: gradient 18s ease infinite;
+  z-index: -1;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-// ===== Panels (Open/Close) =====
-const cards = document.querySelectorAll('.card');
-const closeBtns = document.querySelectorAll('[data-close]');
-const panels = {
-  about: document.getElementById('panel-about'),
-  academic: document.getElementById('panel-academic'),
-  intern: document.getElementById('panel-intern'),
-  certs: document.getElementById('panel-certs'),
-  leadership: document.getElementById('panel-leadership'),
-  resume: document.getElementById('panel-resume'),
-};
+/* ===========================================
+   Base Styles
+=========================================== */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0f172a;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    const key = card.getAttribute('data-target');
-    Object.values(panels).forEach(p => p?.classList.remove('open'));
-    const panel = panels[key];
-    if (panel) {
-      panel.classList.add('open');
-      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
+/* ===========================================
+   Header
+=========================================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  backdrop-filter: blur(8px);
+}
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+.nav a {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.3s;
+}
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
 
-closeBtns.forEach(btn => {
-  btn.addEventListener('click', e => {
-    const panel = e.target.closest('.panel');
-    panel?.classList.remove('open');
-  });
-});
+/* ===========================================
+   Introduction Section
+=========================================== */
+.intro {
+  max-width: 900px;
+  margin: 60px auto 20px;
+  text-align: center;
+  padding: 0 16px;
+}
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+.intro h2 {
+  font-size: 2.2rem;
+  margin: 10px 0 6px;
+}
+.intro p {
+  opacity: 0.9;
+}
 
-// ===== Footer Year =====
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ===========================================
+   Cards / Grid Layout
+=========================================== */
+.grid {
+  max-width: 1100px;
+  margin: 24px auto 50px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.9);
+}
+.card h3 {
+  margin: 4px 0 6px;
+}
+.card p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ===========================================
+   Panels (Pop-up Sections)
+=========================================== */
+.panel {
+  display: none;
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.panel.open {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.close-panel {
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ===========================================
+   Items List
+=========================================== */
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.items li {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+.items h4 {
+  margin: 4px 0 8px;
+}
+
+/* ===========================================
+   Buttons
+=========================================== */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  background: #0f172a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.btn:hover {
+  background: #1e293b;
+}
+.btn.link {
+  background: #1f2937;
+}
+
+/* ===========================================
+   Contact / Footer
+=========================================== */
+.contact {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 16px;
+}
+.site-footer {
+  padding: 30px 16px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* ===========================================
+   Welcome Modal
+=========================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal {
+  background: white;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  max-width: 600px;
+  margin: 16px;
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
+.modal-backdrop.open .modal {
+  transform: scale(1);
+}
+
+/* ===========================================
+   Leadership Gallery
+=========================================== */
+.leadership-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+.leadership-gallery img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.leadership-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================================
+   Project Links (Part A, B, C)
+=========================================== */
+.project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* ===========================================
+   Smooth Fade-in Animation
+=========================================== */
+.main-content {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.main-content.visible {
+  opacity: 1;
+}
+
+/* ===========================================
+   Responsive
+=========================================== */
+@media (max-width: 600px) {
+  .intro h2 {
+    font-size: 1.8rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 8px 12px;
+  }
+}
