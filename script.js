@@ -5,33 +5,33 @@ const modal = document.getElementById("welcomeModal");
 const startBtn = document.getElementById("startBtn");
 const mainContent = document.querySelector(".main-content");
 
-// Check if user has already seen the modal
+// Check if modal has already been seen
 const seen = sessionStorage.getItem("seenWelcome");
 
-// --- Show modal only on first visit ---
+// --- Show modal only the first time ---
 if (!seen) {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
-  mainContent.style.opacity = "0"; // hide content initially
+  mainContent.style.opacity = "0"; // hide content until Enter is clicked
 } else {
-  mainContent.classList.add("visible"); // show content if already seen
-  modal.style.display = "none"; // no modal after first time
+  modal.style.display = "none"; // hide modal on reloads
+  mainContent.classList.add("visible"); // instantly show content
 }
 
 // --- When "Enter" button is clicked ---
 startBtn.addEventListener("click", () => {
-  // Hide modal immediately
+  // Hide modal
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
 
-  // Save to sessionStorage so it doesn't show again
+  // Remember that user has seen it
   sessionStorage.setItem("seenWelcome", "1");
 
-  // Wait 1 second, then fade in content
+  // Wait 0.8s for a smooth fade-in
   setTimeout(() => {
+    modal.style.display = "none";
     mainContent.classList.add("visible");
-    modal.style.display = "none"; // completely remove modal
-  }, 1000);
+  }, 800);
 });
 
 
