@@ -379,13 +379,3 @@ a { color: inherit; }
 
 
 
-@media (max-width: 600px) {
-  .logo-img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .logo-text {
-    font-size: 1.8rem;
-  }
-}
