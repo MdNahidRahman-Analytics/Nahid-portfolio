@@ -1,31 +1,58 @@
-// ===== Welcome Modal (Once per Session) =====
-const modal = document.getElementById('welcomeModal');
-const startBtn = document.getElementById('startBtn');
-const mainContent = document.querySelector('.main-content');
-const seen = sessionStorage.getItem('seenWelcome');
+// ================================================
+// ===== Welcome Modal (Shows once per session) ====
+// ================================================
+document.getElementById("startBtn").addEventListener("click", function () {
+  const modal = document.getElementById("welcomeModal");
+  const content = document.querySelector(".main-content");
 
-if (!seen) {
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden', 'false');
-  mainContent.style.opacity = '0';
-} else {
-  modal.style.display = 'none';
-  mainContent.classList.add('visible');
-}
+  modal.style.display = "none"; // hide the modal
 
-startBtn.addEventListener('click', () => {
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-  sessionStorage.setItem('seenWelcome', '1');
+  // Delay 1 second, then fade in
   setTimeout(() => {
-    modal.style.display = 'none';
-    mainContent.classList.add('visible');
-  }, 800);
+    content.classList.add("visible");
+  }, 1000);
 });
 
-// ===== Panels (Open/Close) =====
+
+// --- Open Modal Function ---
+function openModal() {
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+// --- Close Modal Function ---
+function closeModal() {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+// --- Show modal only if not seen before ---
+if (!seen) {
+  openModal();
+}
+
+// --- Close modal when "Enter" button is clicked ---
+startBtn?.addEventListener('click', () => {
+  sessionStorage.setItem('seenWelcome', '1');
+  closeModal();
+});
+
+// --- Close modal when pressing Enter key on keyboard ---
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && modal.classList.contains('open')) {
+    sessionStorage.setItem('seenWelcome', '1');
+    closeModal();
+  }
+});
+
+
+// ================================================
+// ===== Panels (Cards that open details) ==========
+// ================================================
 const cards = document.querySelectorAll('.card');
 const closeBtns = document.querySelectorAll('[data-close]');
+
+// --- All panel elements mapped by their IDs ---
 const panels = {
   about: document.getElementById('panel-about'),
   academic: document.getElementById('panel-academic'),
@@ -35,10 +62,17 @@ const panels = {
   resume: document.getElementById('panel-resume'),
 };
 
+// ================================================
+// ===== Open selected panel when card clicked =====
+// ================================================
 cards.forEach(card => {
   card.addEventListener('click', () => {
     const key = card.getAttribute('data-target');
+
+    // Close any currently open panel
     Object.values(panels).forEach(p => p?.classList.remove('open'));
+
+    // Open the selected panel
     const panel = panels[key];
     if (panel) {
       panel.classList.add('open');
@@ -47,12 +81,19 @@ cards.forEach(card => {
   });
 });
 
+
+// ================================================
+// ===== Close button inside panels ================
+// ================================================
 closeBtns.forEach(btn => {
-  btn.addEventListener('click', e => {
+  btn.addEventListener('click', (e) => {
     const panel = e.target.closest('.panel');
     panel?.classList.remove('open');
   });
 });
 
-// ===== Footer Year =====
+
+// ================================================
+// ===== Footer Year (Auto-updates each year) ======
+// ================================================
 document.getElementById('year').textContent = new Date().getFullYear();
