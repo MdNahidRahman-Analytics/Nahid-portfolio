@@ -38,37 +38,51 @@ html, body {
 a { color: inherit; }
 
 /* ===========================================
-   🧭 HEADER
+   🧭 HEADER (Modified for large photo)
 =========================================== */
 .site-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 18px 22px;
+  padding: 40px 20px 20px;
   backdrop-filter: blur(8px);
 }
 
-/* --- Profile photo beside name (Fixed & Improved) --- */
+/* --- Profile container like portfolio card --- */
 .logo-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 25px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 340px;
+  margin: 20px auto;
 }
 
+/* --- Large circular profile photo --- */
 .logo-img {
-  width: 90px;
-  height: 90px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  object-fit: cover; /* keeps head fully visible */
+  object-fit: cover;
+  object-position: top center; /* keeps head visible */
   background-color: #fff;
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  border: 5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  display: block;
+  margin-bottom: 15px;
 }
 
+/* --- Centered name below photo --- */
 .logo-text {
+  display: block;
+  text-align: center;
   font-size: 2.4rem;
   font-weight: 800;
   color: #0f172a;
+  margin: 10px 0 5px;
 }
 
 /* --- Navigation buttons --- */
@@ -76,7 +90,7 @@ a { color: inherit; }
   list-style: none;
   display: flex;
   gap: 16px;
-  margin: 0;
+  margin-top: 20px;
   padding: 0;
 }
 
